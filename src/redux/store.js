@@ -15,10 +15,12 @@ import {
 } from "redux-persist";
 import userReducer from "./slices/userSlice";
 import frameReducer from "./slices/frameSlice";
+import cartReducer from "./slices/cartSlice";
 
 const combinedReducer = combineReducers({
   user: userReducer,
   frames: frameReducer,
+  cart: cartReducer,
 });
 
 const rootReducer = (state, action) => {
