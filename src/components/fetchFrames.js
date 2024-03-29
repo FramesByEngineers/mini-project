@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NotFound from "@/assets/img/nonfound.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "@/redux/slices/cartSlice";
+import { addItem, clearCart } from "@/redux/slices/cartSlice";
 
 const FetchFrames = ({ data }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -12,13 +12,10 @@ const FetchFrames = ({ data }) => {
 
   const cartItems = useSelector((state) => state.cart.items);
 
-  const addtocart = () => {
-    dispatch(addItem(items));
+  const addtocart = (item) => {
+    console.log(item);
+    dispatch(addItem(item));
   };
-
-  useEffect(() => {
-    addtocart();
-  }, [items]);
 
   return (
     <div className="flex flex-wrap gap-10 items-center justify-center relative">
@@ -61,7 +58,7 @@ const FetchFrames = ({ data }) => {
                   </p>
                   <button
                     className=" hover:shadow-lg text-white p-2 px-6 rounded-md mt-2 bg-black"
-                    onClick={() => setItems([...cartItems, item])}
+                    onClick={() => addtocart(item)}
                   >
                     Checkout
                   </button>
