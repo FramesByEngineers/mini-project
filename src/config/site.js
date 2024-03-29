@@ -3,8 +3,20 @@ export const siteConfig = {
   description: "Every Mind Matters: Join the Journey to Healing.",
   mainNav: [
     {
-      title: "Menu",
-      href: "/menu",
+      title: "Home",
+      href: "/",
+    },
+    {
+      title: "Category",
+      href: "/category",
+    },
+    {
+      title: "Trendy",
+      href: "/trendy",
+    },
+    {
+      title: "Contact Us",
+      href: "/ContactUs",
     },
     {
       title: "Add Frame",
