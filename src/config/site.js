@@ -6,6 +6,10 @@ export const siteConfig = {
       title: "Menu",
       href: "/menu",
     },
+    {
+      title: "Add Frame",
+      href: "/create-item",
+    },
   ],
   links: {
     login: "/login",

@@ -1,59 +1,61 @@
-import { siteConfig } from "@/config/site";
-import Link from "next/link";
+"use client";
+import { Badge } from "@/components/ui/badge";
 import React from "react";
-import { buttonVariants } from "./ui/button";
-import { Badge } from "./ui/badge";
-import AuthenticationPage from "./authentication-page";
+import HerAnimation from "@/assets/lottie/hero.json";
+import Lottie from "lottie-react";
+import { Button } from "@/components/ui/button";
 
 const HeroComponent = () => {
-  // console.log(process.env.NEXT_APP_RAZOR_PAY_KEY_ID);
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex items-center justify-center">
-        <Badge
-          className={
-            "bg-secondary hover:bg-muted text-sm flex justify-between gap-3 text-muted-foreground"
-          }
-        >
-          <p>🎉</p>
-          <p>Discover Wellness Within</p>
-        </Badge>
-      </div>
+    <section className="flex items-center justify-center w-full md:pl-36 ">
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-6xl "
+        id="home"
+      >
+        <div className="md:h-screen flex flex-col justify-center md:pb-36 pt-10 md:pt-0 md:gap-3 gap-1">
+          <div className="flex">
+            <Badge
+              variant={"outline"}
+              className="border py-2 cursor-pointer px-5"
+            >
+              Abolutely hot collections🔥
+            </Badge>
+          </div>
+          <p className="md:text-7xl text-4xl font-extrabold mt-5">
+            The Best Place to find and buy amazing&nbsp;
+            <span className=" inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#B977FE] to-[#FEBBED]">
+              Frames
+            </span>
+          </p>
+          <p className="mt-5 md:mt-1 text-mediumGrey md:w-3/4 text-muted-foreground">
+            Transform moments into memories with our meticulously crafted
+            frames, where each click finds its perfect place.
+          </p>
 
-      <div className="flex flex-col items-center gap-4">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
-          Together Towards Better Mental Health.
-          <br className="hidden sm:inline" />
-        </h1>
-        {/* <h1 className="text-3xl mt-3 font-extrabold leading-tight tracking-tighter md:text-4xl text-center"></h1> */}
-        <p className="max-w-[700px] text-lg text-muted-foreground text-center">
-          {siteConfig.description}
-        </p>
-      </div>
-
-      <div className="flex justify-center mt-3">
-        <div className="flex gap-4">
-          <Link
-            href={siteConfig.links.signUp}
-            // target="_blank"
-            rel="noreferrer"
-            className={buttonVariants()}
-          >
-            Sign Up
-          </Link>
-          <Link
-            // target="_blank"
-            rel="noreferrer"
-            href={siteConfig.links.github}
-            className={buttonVariants({ variant: "outline" })}
-          >
-            Login
-          </Link>
+          {/* Desktop */}
+          <Button variant="outline" className="flex md:items-center max-w-sm">
+            Buy Now
+          </Button>
         </div>
-      </div>
 
-      <div className="border rounded-sm mt-6 hidden md:flex">
-        <AuthenticationPage />
+        <div className="relative">
+          <div className="md:h-screen md:absolute flex items-center justify-center md:pb-36">
+            <Lottie
+              animationData={HerAnimation}
+              className=" h-[75%] object-contain"
+            />
+            {/* <img
+          src={HeroImg}
+          className=" md:ml-auto h-[75%] object-contain"
+          alt=""
+        /> */}
+          </div>
+        </div>
+
+        {/* Mobile */}
+        {/* <Button className="mr-auto mt-8 text-lg  rounded-lg p-3 px-6 w-full  bg-gradient-to-r from-lightPink to-lightViolet font-medium text-white md:hidden mb-24">
+          Buy Now
+        </Button> */}
       </div>
     </section>
   );

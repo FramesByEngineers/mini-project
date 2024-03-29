@@ -14,9 +14,11 @@ import {
   persistStore,
 } from "redux-persist";
 import userReducer from "./slices/userSlice";
+import frameReducer from "./slices/frameSlice";
 
 const combinedReducer = combineReducers({
   user: userReducer,
+  frames: frameReducer,
 });
 
 const rootReducer = (state, action) => {
@@ -33,10 +35,10 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 // Make sure to configure localforage bxefore the Redux store is created
 localforage.config({
   driver: localforage.INDEXEDDB, // or localforage.LOCALSTORAGE
-  name: "hack",
-  storeName: "hack",
+  name: "FBE",
+  storeName: "FBE",
   version: 1.0,
-  description: "hack store",
+  description: "FBE store",
 });
 
 export const store = configureStore({
