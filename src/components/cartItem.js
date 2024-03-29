@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
+  // const cartItems = useSelector((state) => state.cart.items);
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className=" w-full p-1 px-2 rounded-lg bg-cartItem flex items-center gap-2">

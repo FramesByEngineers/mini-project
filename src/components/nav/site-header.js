@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { resetUser } from "@/redux/slices/userSlice";
 import { SheetDemo } from "../sheetDemo";
+import { AvatarComp } from "../avatar";
 
 export function SiteHeader() {
   const user = useSelector((state) => state.user.user);
@@ -40,53 +41,11 @@ export function SiteHeader() {
               <NavAlert />
             </div> */}
 
-            {user ? (
-              <div>
-                <img
-                  src={user.photoURL}
-                  alt="profile photo"
-                  className="rounded-full w-10 h-10"
-                />
-              </div>
-            ) : (
-              <>
-                <Link
-                  href={siteConfig.links.github}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div
-                    className={buttonVariants({
-                      size: "icon",
-                      variant: "ghost",
-                    })}
-                  >
-                    <Icons.gitHub className="h-5 w-5" />
-                    <span className="sr-only">GitHub</span>
-                  </div>
-                </Link>
-                <Link
-                  href={siteConfig.links.twitter}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div
-                    className={buttonVariants({
-                      size: "icon",
-                      variant: "ghost",
-                    })}
-                  >
-                    <Icons.twitter className="h-5 w-5 fill-current" />
-                    <span className="sr-only">Twitter</span>
-                  </div>
-                </Link>
-              </>
-            )}
-
             <ThemeToggle />
-            {user && <Button onClick={logout}>Logout</Button>}
+            {/* {user && <Button onClick={logout}>Logout</Button>} */}
 
             <SheetDemo />
+            <AvatarComp />
           </nav>
         </div>
       </div>
