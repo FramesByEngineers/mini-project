@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import NotFound from "@/assets/img/nonfound.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, clearCart } from "@/redux/slices/cartSlice";
+import { getAllFrames } from "@/firebase/functions";
+import { setFrames } from "@/redux/slices/frameSlice";
 
 const FetchFrames = ({ data }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -10,7 +12,10 @@ const FetchFrames = ({ data }) => {
 
   const dispatch = useDispatch();
 
-  const cartItems = useSelector((state) => state.cart.items);
+  // const cartItems = useSelector((state) => state.cart.items);
+  useEffect(() => {
+    getAllFrames().then((frame) => dispatch(setFrames(frame)));
+  }, []);
 
   const addtocart = (item) => {
     console.log(item);
