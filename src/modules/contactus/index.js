@@ -167,7 +167,7 @@ const ContactUs = () => {
           type="submit"
           className="block w-full rounded-md bg-lightPrimary px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm hover:bg-lightPink bg-lightViolet p-8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          Let's talk
+          Let&apos;s talk
         </button>
       </div>
     </form>

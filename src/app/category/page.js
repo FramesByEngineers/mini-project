@@ -1,8 +1,9 @@
 "use client";
+import CategoryPage from "@/modules/category";
 import React from "react";
 
-const Category = () => {
-  return <div>Category</div>;
+const Page = () => {
+  return <CategoryPage />;
 };
 
-export default Category;
+export default Page;
