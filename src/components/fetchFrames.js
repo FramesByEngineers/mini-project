@@ -8,17 +8,11 @@ import { setFrames } from "@/redux/slices/frameSlice";
 const FetchFrames = ({ data }) => {
   const [hoveredItem, setHoveredItem] = useState(null);
 
-  const [items, setItems] = useState([]);
-
   const dispatch = useDispatch();
 
   // const cartItems = useSelector((state) => state.cart.items);
-  useEffect(() => {
-    getAllFrames().then((frame) => dispatch(setFrames(frame)));
-  }, []);
 
   const addtocart = (item) => {
-    console.log(item);
     dispatch(addItem(item));
   };
 
