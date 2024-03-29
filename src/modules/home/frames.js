@@ -9,7 +9,7 @@ const Frames = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     getAllFrames().then((frame) => dispatch(setFrames(frame)));
-  }, [frams]);
+  }, []);
   return (
     <div className=" flex flex-col items-center justify-center mt-12 h-auto">
       <p className=" text-2xl font-semibold hover:underline cursor-pointer mb-12 ">
