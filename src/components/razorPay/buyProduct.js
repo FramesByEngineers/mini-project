@@ -43,7 +43,7 @@ const BuyProduct = () => {
           }),
         });
 
-        const res = await data.json();
+        const res = await data;
 
         console.log("response verify==", res);
 

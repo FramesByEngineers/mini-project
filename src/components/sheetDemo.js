@@ -14,10 +14,24 @@ import {
 import { CiShoppingCart } from "react-icons/ci";
 import { useSelector } from "react-redux";
 import CartContainer from "./cartContainer";
+import BuyProduct from "./razorPay/buyProduct";
+import { getAllPurchases, savePurchase } from "@/firebase/functions";
+import { useEffect } from "react";
 
 export function SheetDemo() {
   const cartItems = useSelector((state) => state.cart.items);
   const user = useSelector((state) => state.user.user);
+
+  const handleCheckout = () => {
+    savePurchase("viveksahu1762@gmail.com", cartItems);
+  };
+
+  useEffect(() => {
+    getAllPurchases("viveksahu1762@gmail.com").then(pur => console.log(pur))
+  
+   
+  }, [])
+  
 
   // console.log(cartItems);
   return (
@@ -43,7 +57,8 @@ export function SheetDemo() {
 
         <SheetFooter className={""}>
           {user ? (
-            <Button>Check Out</Button>
+            //  <BuyProduct />
+            <button onClick={handleCheckout}>checkout</button>
           ) : (
             <Button>Login to check out</Button>
           )}
