@@ -20,7 +20,7 @@ const CartItem = ({ item }) => {
       {/* name section */}
       <div className="flex flex-col gap-2">
         <p className="text-base font-semibold">{item?.title}</p>
-        <p className="text-sm block text-gray-300 font-semibold">
+        <p className="text-sm font-semibold">
           RS. {parseFloat(item?.price) * item?.quantity}
         </p>
       </div>
@@ -39,7 +39,7 @@ const CartItem = ({ item }) => {
           <BiMinus className=" " />
         </div>
 
-        <p className="w-5 h-5 rounded-sm bg-gray-200 flex items-center justify-center">
+        <p className="w-5 h-5 rounded-sm bg-muted-foreground flex items-center justify-center text-background">
           {item.quantity}
         </p>
 
