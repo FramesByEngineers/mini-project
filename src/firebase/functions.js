@@ -48,8 +48,8 @@ export const getAllPurchases = async (email) => {
   const querySnapshot = await getDocs(
     query(
       purchasesCollectionRef,
-      where("userEmail", "==", email), // Filter purchases by user's email
-      orderBy("timestamp", "desc") // Order purchases by timestamp in descending order
+      where("userEmail", "==", email) // Filter purchases by user's email
+      // orderBy("timestamp", "desc") // Order purchases by timestamp in descending order
     )
   );
 

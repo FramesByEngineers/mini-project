@@ -27,11 +27,8 @@ export function SheetDemo() {
   };
 
   useEffect(() => {
-    getAllPurchases("viveksahu1762@gmail.com").then(pur => console.log(pur))
-  
-   
-  }, [])
-  
+    getAllPurchases("viveksahu1762@gmail.com").then((pur) => console.log(pur));
+  }, []);
 
   // console.log(cartItems);
   return (
