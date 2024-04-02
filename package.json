@@ -24,6 +24,7 @@
     "cmdk": "^1.0.0",
     "emailjs": "^4.0.3",
     "firebase": "^10.9.0",
+    "framer-motion": "^11.0.24",
     "localforage": "^1.10.0",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.359.0",
