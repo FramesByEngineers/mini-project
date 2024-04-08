@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   IconArrowWaveRightUp,
   IconBoxAlignRightFilled,
@@ -9,12 +9,33 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-
+import { getAllExhibition } from "@/firebase/functions";
 
 export function BentoGridDemo() {
+  const [allFrames, setAllFrames] = useState([]);
+  const getAllFrames = async () => {
+    const allExhibitions = await getAllExhibition();
+    let arr = [];
+    allExhibitions.map((item) => {
+      let obj = {
+        id: item.id,
+        title: item.title,
+        description: item.description,
+        header: <Skeleton img={item.imageURL} />,
+        icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+      };
+      arr.push(obj);
+    });
+    return arr;
+  };
+
+  useEffect(() => {
+    getAllFrames().then((item) => setAllFrames(item));
+  }, []);
+
   return (
     <BentoGrid className="max-w-5xl mx-auto">
-      {items.map((item, i) => (
+      {allFrames.map((item, i) => (
         <BentoGridItem
           link={`/exhibition/id?id=${item.id}`}
           key={i}

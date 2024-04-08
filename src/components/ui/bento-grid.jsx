@@ -37,7 +37,7 @@ export const BentoGridItem = ({
               {title}
             </div>
             <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
-              {description}
+              {description.substring(0,100) + '...'}
             </div>
           </div>
         </div>
