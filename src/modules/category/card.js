@@ -1,3 +1,4 @@
+// card.js
 import { HoverEffect } from "@/components/ui/category";
 
 export function CardHoverEffectDemo() {
@@ -7,41 +8,39 @@ export function CardHoverEffectDemo() {
     </div>
   );
 }
+
 export const projects = [
   {
-    title: "Stripe",
+    title: "Bollywood",
+    category:'bollywood',
     description:
-      "A technology company that builds economic infrastructure for the internet.",
+      "Bollywood, the vibrant heart of Indian cinema, dazzles with its colorful storytelling, extravagant musical numbers, and captivating performances, enthralling audiences worldwide with its unique blend of drama, romance, and spectacle.",
     link: "https://stripe.com",
+    image: "https://lastfm.freetls.fastly.net/i/u/ar0/961493f7b7b04eb294fcfbe2dbdfd828.jpg" // Path to the image for Bollywood project
   },
   {
-    title: "Netflix",
+    title: "Anime",
+    category:'anime',
     description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+      "Anime, a dynamic form of Japanese animation, captivates audiences with its diverse genres, imaginative storytelling, vibrant visuals, and compelling characters, transcending cultures to become a global phenomenon of creativity and expression.",
+    link: "https://hianime.to",
+    image: "https://www.nicepng.com/png/full/348-3480564_son-goku-dragon-ball-z-the-complete-collection.png" // Path to the image for Anime project
   },
   {
-    title: "Google",
+    title: "Marvel",
+    category:'marvel',
     description:
-      "A multinational technology company that specializes in Internet-related services and products.",
+      "Marvel, the legendary comic book universe turned cinematic powerhouse, enchants fans with its iconic superheroes, epic battles, intricate storytelling, and boundless imagination, shaping pop culture and inspiring generations with its heroic adventures.",
     link: "https://google.com",
+    image: "https://pbs.twimg.com/profile_images/1560508217867718657/8ak-Td6l_400x400.jpg" // Path to the image for Marvel project
   },
   {
-    title: "Meta",
+    title: "Sci-Fi",
+    category:'sci-fi',
     description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+      "Marvel, the legendary comic book universe turned cinematic powerhouse, enchants fans with its iconic superheroes, epic battles, intricate storytelling, and boundless imagination, shaping pop culture and inspiring generations with its heroic adventures.",
+    link: "https://google.com",
+    image: "https://preview.redd.it/dialogue-portraits-for-a-sci-fi-game-v0-o660nmc9n3lc1.png?width=400&format=png&auto=webp&s=c4f1fa222eb4929c17fa06f783fa200a338c9d19" // Path to the image for Marvel project
   },
-  {
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
-  },
+  // Add image paths for other projects
 ];

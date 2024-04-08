@@ -1,29 +1,41 @@
-import { cn } from "@/lib/utils";   
+// category.jsx
+import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const HoverEffect = ({ items, className }    ) => {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
+export const HoverEffect = ({ items, className }) => {
+  function limitDescriptionTo90Letters(description) {
+    if (description.length > 90) {
+      // If description is longer than 90 characters, truncate it
+      return description.substring(0, 90) + '...'
+    } else {
+      // If description is already 90 characters or shorter, return it as is
+      return description;
+    }
+  }
+
+  
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
         className
       )}
     >
       {items.map((item, idx) => (
         <Link
-          href={item?.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
+          href={`/category?cat=${item?.category}`}
+          key={item?.category}
+          className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -37,9 +49,9 @@ export const HoverEffect = ({ items, className }    ) => {
               />
             )}
           </AnimatePresence>
-          <Card>
+          <Card image={item.image}>
             <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            <CardDescription>{limitDescriptionTo90Letters(item.description)}</CardDescription>
           </Card>
         </Link>
       ))}
@@ -47,7 +59,7 @@ export const HoverEffect = ({ items, className }    ) => {
   );
 };
 
-export const Card = ({ className, children }) => {
+export const Card = ({ className, children, image }) => {
   return (
     <div
       className={cn(
@@ -56,11 +68,13 @@ export const Card = ({ className, children }) => {
       )}
     >
       <div className="relative z-50">
+        <img src={image} alt="" className="w-full h-auto mb-2" />
         <div className="p-4">{children}</div>
       </div>
     </div>
   );
 };
+
 export const CardTitle = ({ className, children }) => {
   return (
     <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
@@ -68,6 +82,7 @@ export const CardTitle = ({ className, children }) => {
     </h4>
   );
 };
+
 export const CardDescription = ({ className, children }) => {
   return (
     <p
