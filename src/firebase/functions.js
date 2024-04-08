@@ -25,6 +25,14 @@ export const saveExhibition = async (data) => {
     merge: true,
   });
 };
+
+export const getAllExhibition = async () => {
+  const items = await getDocs(
+    query(collection(firestore, "exhibition"), orderBy("id", "desc"))
+  );
+
+  return items.docs.map((doc) => doc.data());
+};
 export const getAllFrames = async () => {
   const items = await getDocs(
     query(collection(firestore, "frames"), orderBy("id", "desc"))
