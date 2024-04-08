@@ -26,6 +26,11 @@ export const siteConfig = {
       title: "Add Frame",
       href: "/create-item",
     },
+    {
+      title: "Support",
+      href: "https://aarogya-sahayakv.vercel.app/",
+
+    },
   ],
   links: {
     login: "/login",
