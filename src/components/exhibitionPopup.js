@@ -10,12 +10,14 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { storage } from "@/firebase/config";
-import { uploadBytesResumable } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import Lottie from "lottie-react";
 import { useState } from "react";
 import animationData from "@/assets/lottie/imageUpload.json";
 import { Textarea } from "./ui/textarea";
 import { saveExhibition } from "@/firebase/functions";
+import Loader from "./loader";
+import { AiFillDelete } from "react-icons/ai";
 
 export function ExhibitionPopUp() {
   const [alertStatus, setAlertStatus] = useState("danger");
