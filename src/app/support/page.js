@@ -24,7 +24,7 @@ SMALL FRAME - 5" X 7" PICTURE SIZE
 Elevate your space with our divine Shree Krishna photo frame. Radiating serenity and grace, its intricate design captures the essence of Lord Krishna's divine presence. Crafted with precision and care, it serves as a timeless symbol of love, devotion, and spiritual enlightenment. Perfect for adorning your home or gifting to loved ones seeking blessings and inspiration.
 </p>
 
-<button className='mx-auto md:-mt-12 border bg-black h-12 w-48  lg:ml-[450px] lg:relative   lg:-mt-12 lg:w-96 text-white'>
+<button className='mx-auto md:-mt-12 border bg-black h-12 w-48  lg:ml-[450px] lg:relativecd    lg:-mt-12 lg:w-96 text-white'>
     Buy Now
 </button>
 
