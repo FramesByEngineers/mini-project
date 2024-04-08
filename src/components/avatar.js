@@ -5,20 +5,15 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { resetUser, setUser } from "@/redux/slices/userSlice";
+import { ExhibitionPopUp } from "./exhibitionPopup";
 
 export function AvatarComp() {
   const user = useSelector((state) => state.user.user);
+  const [exhibitionPopup, setExhibitionPopup] = useState(false);
   const dispatch = useDispatch();
   const [isMenu, setIsMenu] = useState(false);
 
   const logout = () => {
-    // localStorage.clear();
-
-    // dispatch({
-    //   type: actionType.SET_USER,
-    //   user: null,
-    //   role: null,
-    // });
     dispatch(resetUser());
     router.push("/");
   };
@@ -35,10 +30,9 @@ export function AvatarComp() {
         user: { refreshToken, providerData },
       } = await signInWithPopup(firebaseAuth, provider);
       dispatch(setUser(providerData[0]));
-    //   localStorage.setItem("user", JSON.stringify(providerData[0]));
+      //   localStorage.setItem("user", JSON.stringify(providerData[0]));
       console.log(providerData[0]);
     } else {
-      console.log("here");
       setIsMenu(!isMenu);
     }
   };
@@ -70,6 +64,7 @@ export function AvatarComp() {
               Documentation
             </Link>
           </div>
+          <ExhibitionPopUp />
           <p
             onClick={logout}
             className="px-6 py-3 rounded-b-lg md:rounded-lg hover:bg-red-400 hover:text-foreground md:mt-0 text-center transition-all text-destructive bg-red-300 duration-200"

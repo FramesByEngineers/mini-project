@@ -23,8 +23,7 @@ export const BentoGridItem = ({
   icon,
 }) => {
   return (
-    <Link href={link}>
-      <div
+      <Link href={link}
         className={cn(
           "row-span-1 rounded-xl group/bento border-black/[0.1] transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border justify-between flex flex-col space-y-4",
           className
@@ -42,7 +41,7 @@ export const BentoGridItem = ({
             </div>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+
   );
 };

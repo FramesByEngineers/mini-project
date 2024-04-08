@@ -9,7 +9,7 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import Image from "next/image";
+
 
 export function BentoGridDemo() {
   return (
@@ -28,6 +28,7 @@ export function BentoGridDemo() {
     </BentoGrid>
   );
 }
+
 const Skeleton = ({ img }) => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl ">
     <img className="w-full" src={img} />
