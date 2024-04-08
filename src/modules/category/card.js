@@ -12,6 +12,7 @@ export function CardHoverEffectDemo() {
 export const projects = [
   {
     title: "Bollywood",
+    category:'bollywood',
     description:
       "Bollywood, the vibrant heart of Indian cinema, dazzles with its colorful storytelling, extravagant musical numbers, and captivating performances, enthralling audiences worldwide with its unique blend of drama, romance, and spectacle.",
     link: "https://stripe.com",
@@ -19,6 +20,7 @@ export const projects = [
   },
   {
     title: "Anime",
+    category:'anime',
     description:
       "Anime, a dynamic form of Japanese animation, captivates audiences with its diverse genres, imaginative storytelling, vibrant visuals, and compelling characters, transcending cultures to become a global phenomenon of creativity and expression.",
     link: "https://hianime.to",
@@ -26,6 +28,7 @@ export const projects = [
   },
   {
     title: "Marvel",
+    category:'marvel',
     description:
       "Marvel, the legendary comic book universe turned cinematic powerhouse, enchants fans with its iconic superheroes, epic battles, intricate storytelling, and boundless imagination, shaping pop culture and inspiring generations with its heroic adventures.",
     link: "https://google.com",
@@ -33,6 +36,7 @@ export const projects = [
   },
   {
     title: "Sci-Fi",
+    category:'sci-fi',
     description:
       "Marvel, the legendary comic book universe turned cinematic powerhouse, enchants fans with its iconic superheroes, epic battles, intricate storytelling, and boundless imagination, shaping pop culture and inspiring generations with its heroic adventures.",
     link: "https://google.com",

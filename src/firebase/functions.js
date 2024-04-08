@@ -19,6 +19,12 @@ export const saveItem = async (data) => {
   });
 };
 
+
+export const saveExhibition = async (data) => {
+  await setDoc(doc(firestore, "exhibition", `${Date.now()}`), data, {
+    merge: true,
+  });
+};
 export const getAllFrames = async () => {
   const items = await getDocs(
     query(collection(firestore, "frames"), orderBy("id", "desc"))
