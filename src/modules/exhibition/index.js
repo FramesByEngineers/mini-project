@@ -1,7 +1,9 @@
 import { Button } from '@/components/ui/button'
-import React from 'react'
+import { QrCode } from 'lucide-react'
+import React, { useState } from 'react'
 
 const SingleExhibition = ({ exhibitionData }) => {
+    const [buyNowClicked, setBuyNowClicked] = useState(false)
     return (
 
         <section className='max-w-5xl'>
@@ -18,10 +20,12 @@ const SingleExhibition = ({ exhibitionData }) => {
                 <p className='font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]'>
                     {exhibitionData.description}
                 </p>
-                <Button className='mx-auto md:-mt-12 lg:ml-[450px] lg:-mt-12 lg:w-96 text-white'>
+                <Button className='mx-auto md:-mt-12 lg:ml-[450px] lg:-mt-12 lg:w-96 text-white' onClick={() => setBuyNowClicked(true)}>
                     Buy Ticket
                 </Button>
             </div>
+
+            {buyNowClicked && (<QrCode data={exhibitionData} />)}
         </section>
 
     )
