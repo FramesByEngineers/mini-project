@@ -26,6 +26,25 @@ export const saveExhibition = async (data) => {
   });
 };
 
+export const getExhibitionById = async (exhibitionId) => {
+  try {
+    const exhibitionCollectionRef = collection(firestore, "exhibition");
+    const querySnapshot = await getDocs(
+      query(
+        exhibitionCollectionRef,
+        where("id", "==", exhibitionId)
+      )
+    );
+    if (querySnapshot.empty) {
+      throw new Error("Exhibition not found");
+    }
+    return querySnapshot.docs[0].data();
+  } catch (error) {
+    console.error("Error fetching exhibition:", error);
+    throw error;
+  }
+};
+
 export const getAllExhibition = async () => {
   const items = await getDocs(
     query(collection(firestore, "exhibition"), orderBy("id", "desc"))
@@ -33,6 +52,8 @@ export const getAllExhibition = async () => {
 
   return items.docs.map((doc) => doc.data());
 };
+
+
 export const getAllFrames = async () => {
   const items = await getDocs(
     query(collection(firestore, "frames"), orderBy("id", "desc"))
