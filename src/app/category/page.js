@@ -10,7 +10,7 @@ const Page = () => {
 
   return <Suspense fallback={<div>Loading...</div>}>
     {category ? <Cat /> :<CategoryPage /> }
-    </Suspense>;
+    </Suspense>; 
 };
 
 export default Page;
