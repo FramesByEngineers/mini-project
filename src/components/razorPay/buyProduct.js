@@ -28,7 +28,7 @@ const BuyProduct = ({
     const key = RAZORPAY_API_KEY;
     console.log(key);
     // Make API call to the serverless API
-    const data = await fetch("http://localhost:3000/api/razorpay", {
+    const data = await fetch("https://frames-by-engineer.vercel.app/api/razorpay", {
       method: "POST",
       // headers: {
       //   // Authorization: 'YOUR_AUTH_HERE'
@@ -54,7 +54,7 @@ const BuyProduct = ({
         // if (response.length==0) return <Loading/>;
         console.log(response);
 
-        const data = await fetch("http://localhost:3000/api/paymentverify", {
+        const data = await fetch("https://frames-by-engineer.vercel.app/api/paymentverify", {
           method: "POST",
           // headers: {
           //   // Authorization: 'YOUR_AUTH_HERE'
