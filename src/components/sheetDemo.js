@@ -16,11 +16,17 @@ import { useSelector } from "react-redux";
 import CartContainer from "./cartContainer";
 import BuyProduct from "./razorPay/buyProduct";
 import { getAllPurchases, savePurchase } from "@/firebase/functions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import TicketContainer from "./ticketContainer";
 
 export function SheetDemo() {
   const cartItems = useSelector((state) => state.cart.items);
   const user = useSelector((state) => state.user.user);
+  const [activeComponent, setActiveComponent] = useState("MyTickets");
+
+  const handleClick = (componentName) => {
+    setActiveComponent(componentName);
+  };
 
   const handleCheckout = () => {
     savePurchase("viveksahu1762@gmail.com", cartItems);
@@ -45,11 +51,25 @@ export function SheetDemo() {
       </SheetTrigger>
       <SheetContent className="h-screen flex flex-col justify-between">
         <SheetHeader>
-          <SheetTitle>Cart</SheetTitle>
+          <div className={"flex justify-between"}>
+            <SheetTitle
+              onClick={() => handleClick("Cart")}
+              className="cursor-pointer"
+            >
+              Cart
+            </SheetTitle>
+            <SheetTitle
+              onClick={() => handleClick("MyTickets")}
+              className="cursor-pointer"
+            >
+              My Tickets
+            </SheetTitle>
+          </div>
+          {activeComponent === "Cart" && <CartContainer />}
+          {activeComponent === "MyTickets" && <TicketContainer />}
           {/* <SheetDescription>
             Make changes to your profile here. Click save when you&apos;re done.
           </SheetDescription> */}
-          <CartContainer />
         </SheetHeader>
 
         <SheetFooter className={""}>

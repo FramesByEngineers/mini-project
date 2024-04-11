@@ -15,7 +15,7 @@ export const siteConfig = {
       href: "/category",
     },
     {
-      title: "Trendy",
+      title: "Collages",
       href: "/trendy",
     },
     {

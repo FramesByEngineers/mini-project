@@ -1,8 +1,9 @@
 "use client";
+import Trendy from "@/modules/trendy";
 import React from "react";
 
-const Trendy = () => {
-  return <div>Trendy</div>;
+const Page = () => {
+  return <Trendy />;
 };
 
-export default Trendy;
+export default Page;

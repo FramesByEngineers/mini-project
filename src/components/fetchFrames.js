@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem, clearCart } from "@/redux/slices/cartSlice";
 import { getAllFrames } from "@/firebase/functions";
 import { setFrames } from "@/redux/slices/frameSlice";
+import Link from "next/link";
 
-const FetchFrames = ({ data }) => {
+const FetchFrames = ({ data, purpose }) => {
+  // console.log(purpose)
   const [hoveredItem, setHoveredItem] = useState(null);
 
   const dispatch = useDispatch();
@@ -20,7 +22,8 @@ const FetchFrames = ({ data }) => {
     <div className="flex flex-wrap gap-10 items-center justify-center relative">
       {data && data.length > 0 ? (
         data.map((item) => (
-          <div
+          <Link
+            href={`/${item.id}`}
             className="w-[350px] flex flex-col relative cursor-pointer group "
             key={item.id}
             onMouseEnter={() => setHoveredItem(item)}
@@ -35,7 +38,7 @@ const FetchFrames = ({ data }) => {
                 />
               </div>
 
-              {hoveredItem === item && (
+              {hoveredItem === item && purpose !== "show" && (
                 <div className="w-full h-full bg-black bg-opacity-50 absolute top-0 right-0 left-0 bottom-0 flex flex-col justify-center items-center">
                   <p className="text-white hover:bg-opacity-100 text-opacity-100 p-2">
                     {item.title}
@@ -64,8 +67,10 @@ const FetchFrames = ({ data }) => {
                 </div>
               )}
             </div>
-            <p className="text-center mt-4">{item.title}</p>
-          </div>
+            {purpose !== "show" && (
+              <p className="text-center mt-4">{item.title}</p>
+            )}
+          </Link>
         ))
       ) : (
         <div className="w-full flex flex-col items-center justify-center">

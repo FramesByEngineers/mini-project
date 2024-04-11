@@ -16,11 +16,14 @@ import {
 import userReducer from "./slices/userSlice";
 import frameReducer from "./slices/frameSlice";
 import cartReducer from "./slices/cartSlice";
+import paymentReducer from "./slices/paymentSlice";
+
 
 const combinedReducer = combineReducers({
   user: userReducer,
   frames: frameReducer,
   cart: cartReducer,
+  payment: paymentReducer,
 });
 
 const rootReducer = (state, action) => {

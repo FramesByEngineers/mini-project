@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-const SingleExhibition = ({ exhibitionData }) => {
+const SingleProduct = ({ frameData }) => {
   const [buyNowClicked, setBuyNowClicked] = useState(false);
   const payment = useSelector((state) => state.payment.payment);
   const router = useRouter();
@@ -22,30 +22,44 @@ const SingleExhibition = ({ exhibitionData }) => {
     <section className="max-w-5xl">
       <div className="border border-gray-300 rounded-xl mt-12 mx-auto max-w-xl px-4 lg:w-80 lg:h-96 lg:ml-[200px] items-center">
         <img
-          src={exhibitionData.imageURL}
+          src={frameData.imageURL}
           className="rounded-xl  lg:w-80 lg:h-[350px] object-contain"
         />
         <p className="text-center text-lg font-normal font-serif lg:absolute lg:ml-[450px] lg:-mt-[350px]">
-          {exhibitionData.title}
+          {frameData.title}
         </p>
         <p className="text-center text-l font-light text-gray-600 lg:absolute lg:ml-[450px] lg:-mt-[310px]">
-          ₹ {exhibitionData.price}
+          ₹ {frameData.price}
         </p>
         <hr className="h-[2px] w-96 bg-gray-300 lg:absolute lg:ml-[450px] lg:-mt-[270px]"></hr>
         <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
-          {exhibitionData.description}
+          {frameData.category}
         </p>
-
+        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
+          {frameData.color}
+        </p>
+        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
+          {frameData.dimensions}
+        </p>
+        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
+          {frameData.glass}
+        </p>
+        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
+          {frameData.material}
+        </p>
+        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
+          {frameData.width}
+        </p>
         <div className="mx-auto md:-mt-12 lg:ml-[450px] lg:-mt-12 lg:w-96 text-white">
           <BuyProduct
-            purchaseData={exhibitionData}
-            paymentFor={exhibitionData.title}
-            price={exhibitionData.price}
+            type={"frame"}
+            purchaseData={frameData}
+            paymentFor={frameData.title}
+            price={frameData.price}
             userId={45785}
-            productId={exhibitionData.id}
+            productId={frameData.id}
           />
         </div>
-
         {/* <Button
           className="mx-auto md:-mt-12 lg:ml-[450px] lg:-mt-12 lg:w-96 text-white"
           onClick={() => handleBuy(exhibitionData)}
@@ -70,4 +84,4 @@ const SingleExhibition = ({ exhibitionData }) => {
   );
 };
 
-export default SingleExhibition;
+export default SingleProduct;
