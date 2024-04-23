@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Hack",
+  name: "Frames",
   description: "Every Mind Matters: Join the Journey to Healing.",
   mainNav: [
     {
@@ -28,7 +28,7 @@ export const siteConfig = {
     },
     {
       title: "Support",
-      href: "https://aarogya-sahayakv.vercel.app/",
+      href: "https://vc-frames-by-enginers.vercel.app/create",
 
     },
   ],

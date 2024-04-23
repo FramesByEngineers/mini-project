@@ -22,7 +22,7 @@ import TicketContainer from "./ticketContainer";
 export function SheetDemo() {
   const cartItems = useSelector((state) => state.cart.items);
   const user = useSelector((state) => state.user.user);
-  const [activeComponent, setActiveComponent] = useState("MyTickets");
+  const [activeComponent, setActiveComponent] = useState("Cart");
 
   const handleClick = (componentName) => {
     setActiveComponent(componentName);

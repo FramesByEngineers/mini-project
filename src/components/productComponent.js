@@ -32,24 +32,16 @@ const SingleProduct = ({ frameData }) => {
           ₹ {frameData.price}
         </p>
         <hr className="h-[2px] w-96 bg-gray-300 lg:absolute lg:ml-[450px] lg:-mt-[270px]"></hr>
-        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
-          {frameData.category}
-        </p>
-        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
-          {frameData.color}
-        </p>
-        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
-          {frameData.dimensions}
-        </p>
-        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
-          {frameData.glass}
-        </p>
-        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
-          {frameData.material}
-        </p>
-        <p className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
-          {frameData.width}
-        </p>
+        <div className="font-light text-gray-700 lg:absolute lg:ml-[450px] lg:-mt-[250px] md:mr-[200px]">
+          <p>Category: {frameData.category}</p>
+          <p>Color: {frameData.color}</p>
+          <p>Dimension: {frameData.dimensions}</p>
+          <p>Glass: {frameData.glass}</p>
+          <p>Material: {frameData.material}</p>
+          <p>Width: {frameData.width}</p>
+          <p>Height: {frameData.height}</p>
+        </div>
+
         <div className="mx-auto md:-mt-12 lg:ml-[450px] lg:-mt-12 lg:w-96 text-white">
           <BuyProduct
             type={"frame"}
