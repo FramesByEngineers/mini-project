@@ -4,6 +4,7 @@ import { getAllFrames } from "@/firebase/functions";
 import { setFrames } from "@/redux/slices/frameSlice";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 
 const Trendy = () => {
   const frames = useSelector((state) => state.frames.frames);
@@ -13,9 +14,10 @@ const Trendy = () => {
   }, []);
   return (
     <div className="flex gap-4 flex-wrap justify-center">
-      <div className="w-[45%]">
+      <Link href={'/layoutgrid'} className="w-[45%]">
         <LayoutGridDemo />
-      </div>
+      </Link>
+
       <FetchFrames data={frames?.slice(0, 1)} purpose="show" />
     </div>
   );
