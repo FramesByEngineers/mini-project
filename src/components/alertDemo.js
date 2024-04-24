@@ -50,7 +50,7 @@ export function AlertDialogDemo({ item }) {
           </AlertDialogDescription>
           <div className="flex md:flex-row flex-col gap-3 items-center justify-center">
             <QRComp
-              value={`http://localhost:3000/tickets/${user.email}/${item.id}`}
+              value={`https://frames-by-engineer.vercel.app/tickets/${user.email}/${item.id}`}
             />
             <div className="flex flex-col ">
               <h1 className="text-xl font-bold">{item.title}</h1>
