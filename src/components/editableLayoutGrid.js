@@ -71,7 +71,6 @@ export function EditableLayoutGridDemo() {
     <div className="h-full w-full">
       <LayoutGrid cards={cards} uploadImage={uploadImage} />
       <div className="flex gap-2">
-        {" "}
         <input type="file" onChange={(e) => uploadImage(e, 0)} />
         <input type="file" onChange={(e) => uploadImage(e, 1)} />
         <input type="file" onChange={(e) => uploadImage(e, 2)} />
