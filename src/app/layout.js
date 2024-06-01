@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={inter.className}>
           <ReduxProvider>
-            <ThemeProvider attribute="class" defaultTheme="system">
+            <ThemeProvider attribute="class" defaultTheme="light">
               <Toaster />
               <ConditionalHeaderFooter>
                 <div className="p-8">{children}</div>
